@@ -16,4 +16,13 @@ class UsersController extends Controller
             echo $user['id'] . " - " . $user['name'] . "\n";
         }
     }
+    public function checkuser(int $id){
+        if ($id <= 10) {
+            return response()->json(["messege"=>"welcome your id is valid"]);
+        }
+        else {
+            return response()->json(["messege"=>"there is no space for you"]);
+        }
+        
+    }
 }
